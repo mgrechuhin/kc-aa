@@ -1,7 +1,7 @@
 name: publish
 on: [push]
 jobs:
-publish-kc-aa-docker-image:
+publish-kc-aa-image:
 runs-on: ubuntu-latest
 steps:
 - uses: actions/checkout@v2
