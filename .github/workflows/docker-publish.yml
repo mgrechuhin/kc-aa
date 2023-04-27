@@ -11,7 +11,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build the kc-aa Docker image
-        run:
-          docker build . --tag ghcr.io/mgrechuhin/kc-aa:latest
-          docker push ghcr.io/mgrechuhin/kc-aa:latest
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
